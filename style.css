@@ -13,6 +13,13 @@ body {
   max-width: 1080px;
   margin: 0 auto;
 }
+/* PC用カルーセル設定 */
+.carousel {
+  margin: 0 20px;
+}
+.carouselImg {
+  width: 100%;
+}
 /* ヘッダー */
 header {
   display: flex;
@@ -557,13 +564,19 @@ footer {
   #nav-pc {
     display: none;
   }
+  /* スマホ用カルーセル設定 */
+  .carousel{
+    margin: 0;
+  }
   /* ハンバーガーメニュー */
   #menu-sp {
     display: block;
     background-color: transparent;
-    float: right;
     padding: 0;
     border: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
   /* スマホ用ナビゲーションの表示切替 */
   /* 初期状態、レイアウトと非表示設定 */
