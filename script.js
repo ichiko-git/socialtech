@@ -46,7 +46,6 @@ $(function () {
       message += "お名前を入力してください。\n";
     } else {
       // エラーなし
-      error = false;
       $("#name").css("background-color", "#fafafa");
     }
 
@@ -58,7 +57,6 @@ $(function () {
       message += "フリガナを入力してください。\n";
     } else {
       // エラーなし
-      error = false;
       $("#furigana").css("background-color", "#fafafa");
     }
 
@@ -70,7 +68,6 @@ $(function () {
       message += "お問い合わせ内容を入力してください。\n";
     } else {
       // エラーなし
-      error = false;
       $("#message").css("background-color", "#fafafa");
     }
 
@@ -87,7 +84,6 @@ $(function () {
         "メールアドレスが未記入、または「＠」「.」が含まれていません。\n";
     } else {
       // エラーなし
-      error = false;
       $("#email").css("background-color", "#fafafa");
     }
 
@@ -99,9 +95,41 @@ $(function () {
       message += "電話番号に「-」が含まれていません。\n";
     } else {
       // エラーなし
-      error = false;
       $("#tel").css("background-color", "#fafafa");
     }
+
+    // 都道府県のチェック
+    if ($("#prefecture").val() === "") {
+      // エラーあり
+      error = true;
+      $("#prefecture").css("background-color", "#f79999");
+      message += "都道府県を選択してください。\n";
+    } else {
+      // エラーなし
+      $("#prefecture").css("background-color", "#fafafa");
+    }
+
+    // チェックボックスのチェック
+    if ($("#agree").prop("checked") === false) {
+      // エラーあり
+      error = true;
+      message +=
+        "個人情報の取り扱いについてご同意いただける場合は、チェックボックスにチェックしてください。\n";
+    }
+
+    // エラーの有無で送信ボタンを切り替え
+    if (error === true) {
+      $("#submit").attr("src", "images/button-submit.png");
+    } else {
+      $("#submit").attr("src", "images/button-submit-blue.png");
+    }
+
+    // オブジェクトでエラー判定とメッセージを返す
+    result = {
+      error: error,
+      message: message,
+    };
+    return result;
   }
 
   // 送信ボタンをクリックした時
@@ -110,6 +138,15 @@ $(function () {
     event.preventDefault();
     // 入力チェックをした結果をresultに格納
     let result = inputCheck();
+    // エラー判定とメッセージを取得
+    let error = result.error;
+    let message = result.message;
+    // エラーがなかったらフォーム送信
+    if (error === false) {
+      alert("送信成功");
+    } else {
+      alert(message);
+    }
   });
 
   // フォーカスが外れたときにフォームの入力チェックをする
