@@ -451,6 +451,10 @@ footer {
   box-shadow: none;
 }
 /* news投稿ページ */
+#single-content {
+  margin-left: 30px;
+  margin-right: 30px;
+}
 #news-back {
   text-align: center;
   margin-bottom: 50px;
@@ -849,6 +853,12 @@ footer {
   .radiobutton {
     margin-bottom: 20px;
   }
+
+  /* NEWS */
+  .news-h2 {
+    font-size: 20px;
+  }
+
   /* フッター */
   footer {
     padding: 30px 20px 50px 20px;

@@ -67,7 +67,7 @@
                 id="logo-sp"
                 onclick="document.getElementById('nav-sp').style.display = 'none'"
               >
-                <img src="images/logo-sp.png" alt="トップページに戻る" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-sp.png" alt="トップページに戻る" />
               </a>
             </li>
             <li>

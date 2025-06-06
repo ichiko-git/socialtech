@@ -21,12 +21,10 @@ Template Post Type: post
             </div>
           </div>
         </section>
-        <section id="news-content">
+        <section id="single-content">
           <h2 class="index-h2"><?php the_title(); ?></h2>
           <p><?php the_date(); ?></p>
-          <div class="news-content-inner">
-            <?php the_content(); ?>
-          </div>
+          <p><?php the_content(); ?></p>
         </section>
         <section id="news-back">
           <a href="<?php echo home_url(); ?>/category/news">一覧に戻る</a>
