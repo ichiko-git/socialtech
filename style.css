@@ -1,3 +1,12 @@
+/*
+Theme Name: SocialTech
+Theme URI: https://www.socialtech.co.jp/
+Description: SocialTechのWordPress教材
+Version: 1.0.0
+Author: Ichiko Yamamoto
+Author URI: https://www.socialtech.co.jp/
+*/
+
 @charset "utf-8";
 
 * {
@@ -400,6 +409,52 @@ footer {
   color: #ffffff;
   margin: 0;
 }
+/* ニュースのメインビジュアル */
+.news-main-inner {
+  background-image: url("images/news/news-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+#news-contents {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+.news-content {
+  margin-bottom: 40px;
+}
+.news-h2 {
+  margin-top: 20px;
+}
+/* ページネーション */
+.news-pagination {
+  text-align: center;
+}
+.page-numbers {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 5px;
+  color: #0d0d0d;
+  border: 1px solid #0d0d0d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-numbers.current {
+  background-color: #2710d5;
+  color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(39, 16, 213, 0.3);
+}
+
+.page-numbers.prev,
+.page-numbers.next {
+  border: none;
+  box-shadow: none;
+}
+/* news投稿ページ */
+#news-back {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 /* mission.html */
 /* ミッションのメインビジュアル */
@@ -565,7 +620,7 @@ footer {
     display: none;
   }
   /* スマホ用カルーセル設定 */
-  .carousel{
+  .carousel {
     margin: 0;
   }
   /* ハンバーガーメニュー */
@@ -818,6 +873,11 @@ footer {
     margin-top: 30px;
   }
 
+  /* ニュースページ　メインビジュアル */
+  .news-main-inner {
+    height: 80%;
+    background-size: cover;
+  }
   /* mission.html */
   /* ミッションページ　メインビジュアル */
   #mission-main {
@@ -936,4 +996,10 @@ footer {
     order: 2;
     width: 100%;
   }
+}
+
+/* WPForms 送信ボタン */
+.wpforms-submit {
+  background-color: #2710d5 !important;
+  color: #ffffff !important;
 }
